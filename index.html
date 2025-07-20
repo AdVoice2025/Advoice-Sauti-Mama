@@ -1,89 +1,90 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sauti Mama | Powered by AdVoice Uganda</title>
+  <title>Sauti Mama – Powered by AdVoice Uganda</title>
   <style>
     :root {
-      --primary: #6d28d9;
-      --accent: #fbbf24;
-      --light-bg: #f9f9f9;
-      --text: #1f2937;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--light-bg);
-      color: var(--text);
-    }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      padding: 1em 2em;
-      display: flex;
-      justify-content: space-between;
-      z-index: 999;
-    }
-    nav a {
-      margin-left: 1em;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 100px 20px 60px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    h2 {
-      color: var(--primary);
-      border-left: 5px solid var(--accent);
-      padding-left: 0.5em;
-    }
-    .image {
-      margin: 1em 0;
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    footer {
-      background: var(--primary);
-      color: white;
-      padding: 2em;
-      text-align: center;
-    }
+      --primary-color: #8A1538; /* Deep red */
+      --accent-color: #F2A900; /* Warm yellow */
+      --background-color: #FFF8F2; /* Light peach background */
+      --text-color: #333333;
+    }body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
   </style>
-</head>
-<body>
+</head><body>
   <header>
-    <div><strong>Sauti Mama</strong></div>
+    <h1>Sauti Mama</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#solution">Solution</a>
-      <a href="#pilot">Pilot</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <section>
-    <h2>Empowering Rural Mothers with Voice Technology</h2>
-    <p>Sauti Mama is a maternal health information platform that uses voice technology to deliver trusted, timely, and culturally relevant information to underserved mothers in rural Uganda.</p>
-    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?fit=crop&w=1200&q=80" class="image" alt="Mother and baby" />
-  </section>  <section id="about">
+  </header>  <section id="about">
     <h2>About Us</h2>
-    <p>We are a passionate team of young innovators brought together by a shared vision: to bridge maternal health information gaps in hard-to-reach Ugandan communities using simple voice technology. Our initiative is powered by <strong>AdVoice Uganda</strong>, where we combine tech, empathy, and creativity to empower women.</p>
-    <p>Our team includes <strong>Ilobun Faithful Iziengbe, Olu John, Olayinka Taiwo</strong> and <strong>Niyonsaba Elie</strong>—each bringing experience from health, tech, and social impact fields.</p>
-    <img src="https://images.unsplash.com/photo-1543352634-27578c2076d7?fit=crop&w=1200&q=80" class="image" alt="Community health session" />
+    <p><strong>Sauti Mama</strong> is a maternal health information platform that uses voice technology (IVR and WhatsApp voice notes) to reach underserved mothers in rural Uganda.</p>
+    <p>With low smartphone and literacy rates in regions like Moroto and Kitgum, we are bridging the information gap by delivering trusted, localized, and timely health content in native languages.</p>
+    <p>AdVoice Uganda was born out of a shared vision among young innovators committed to solving health communication challenges through technology. Each team member brings a unique skillset, from strategy and content development to community engagement and marketing.</p>
   </section>  <section id="solution">
     <h2>Our Solution</h2>
-    <p>Through IVR calls and WhatsApp voice notes, we share maternal health education in local languages tailored for regions with low literacy and smartphone access. Our hybrid model ensures rural mothers receive antenatal and postpartum support on channels they already use.</p>
-    <img src="https://images.unsplash.com/photo-1588776814546-ec7fa67ad9a7?fit=crop&w=1200&q=80" class="image" alt="Mother listening to health information" />
-  </section>  <section id="pilot">
-    <h2>Pilot Plan</h2>
-    <p>We are launching pilots in Moroto and Kitgum, two districts with significant maternal health disparities. Our aim is to test the delivery of localized content through voice platforms, measure impact, and scale based on feedback from mothers, health workers, and community leaders.</p>
-    <img src="https://images.unsplash.com/photo-1633621297593-b6ee9ff875a1?fit=crop&w=1200&q=80" class="image" alt="Pilot program area in Uganda" />
+    <p>Through partnerships with health professionals and local leaders, Sauti Mama delivers culturally appropriate content in audio format. Whether it's antenatal care tips or postpartum support, we ensure every mother hears what matters most.</p>
+    <p>We use both inbound and outbound IVR calls and integrate with WhatsApp to create a hybrid channel that fits the communication habits of rural women.</p>
   </section>  <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Email:</strong> hello.advoice@gmail.com</p>
@@ -93,5 +94,4 @@
     <p>&copy; 2025 Sauti Mama. All rights reserved.</p>
     <p>Powered by AdVoice Uganda</p>
   </footer>
-</body>
-</html>
+</body></html>
