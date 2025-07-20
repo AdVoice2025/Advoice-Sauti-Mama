@@ -1,315 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sauti Mama | Using Voice to Save Mothers’ Lives in Uganda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sauti Mama | Voice for Maternal Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Brand Colors */
     :root {
-      --purple: #4B006E;
-      --yellow: #FFEE8C;
-      --dark-text: #2e2e2e;
-      --light-bg: #f9f8fb;
-      --button-hover: #3a0055;
-    }
+      --primary: #9E0059;
+      --accent: #F2A900;
+      --light: #fff8f8;
+      --dark: #1d1d1d;
+    }* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
 
-    /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-bg);
-      color: var(--dark-text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    a {
-      color: var(--purple);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+header h1 {
+  font-size: 1.5rem;
+}
 
-    header {
-      background-color: var(--purple);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    }
-    header h1 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 0.25rem;
-      letter-spacing: 1px;
-    }
-    header nav {
-      margin-top: 0.5rem;
-    }
-    header nav a {
-      margin: 0 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--yellow);
-      transition: color 0.3s ease;
-    }
-    header nav a:hover {
-      color: #fff;
-    }
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    main {
-      max-width: 960px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
-    }
+.hero {
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1626376041423-dcc4f4c9d8ce?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+  min-height: 70vh;
+}
 
-    section {
-      margin-bottom: 4rem;
-    }
+.hero h2 {
+  font-size: 2.5rem;
+  max-width: 600px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 10px;
+}
 
-    section h2 {
-      color: var(--purple);
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 4px solid var(--yellow);
-      padding-bottom: 0.25rem;
-      font-weight: 700;
-    }
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    section p, section li {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: var(--dark-text);
-    }
+section h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
 
-    ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
+section p {
+  margin-bottom: 1rem;
+}
 
-    ul li {
-      margin-bottom: 0.5rem;
-      list-style-type: disc;
-    }
+.img-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-    .btn {
-      display: inline-block;
-      background-color: var(--purple);
-      color: var(--yellow);
-      font-weight: 700;
-      padding: 0.6rem 1.3rem;
-      border-radius: 30px;
-      margin-top: 1rem;
-      box-shadow: 0 4px 8px rgb(75 0 110 / 0.4);
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-      border: none;
-      text-align: center;
-    }
-    .btn:hover, .btn:focus {
-      background-color: var(--button-hover);
-      outline: none;
-    }
+.img-row img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-    /* Image Styling */
-    .image-container {
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .image-container img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
 
-    /* Responsive Flex for pilot & partners lists */
-    .flex-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    .flex-col {
-      flex: 1 1 300px;
-    }
+footer p {
+  margin-bottom: 0.5rem;
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: var(--purple);
-      color: var(--yellow);
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    }
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
 
-    /* Contact details styling */
-    .contact-info {
-      font-size: 1.15rem;
-      margin-top: 0.5rem;
-    }
-    .contact-info strong {
-      color: var(--purple);
-    }
-
-    /* Section intro paragraphs */
-    .intro {
-      font-size: 1.15rem;
-      max-width: 720px;
-      margin-bottom: 1rem;
-    }
+  nav a {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
 
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Sauti Mama</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#problem">The Problem</a>
-    <a href="#solution">Our Solution</a>
-    <a href="#pilot">Pilot Plan</a>
-    <a href="#about">About Us</a>
-    <a href="#partners">Partners</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-
-  <section id="home" aria-label="Home">
-    <h2>Using Voice to Save Mothers’ Lives in Uganda</h2>
-    <p class="intro"><strong>Bringing maternal health information to rural Uganda one voice at a time.</strong></p>
-    <p>Every day, women in Uganda face preventable maternal complications often because critical health information doesn't reach them in time, or in a language they understand.</p>
-    <p>At Ad Voice Co., we're using voice technology to bridge that gap. Through IVR, WhatsApp voice notes, and radio, we deliver trusted, localized maternal health messages directly to the people who need them most.</p>
-    <button class="btn" onclick="location.href='#partners'">Partner with Us</button>
-    <button class="btn" onclick="location.href='#solution'">Learn More</button>
-    <button class="btn" onclick="location.href='#contact'">Contact Us</button>
-    <div class="image-container" style="margin-top:2rem;">
-      <img src="https://source.unsplash.com/960x480/?mother,baby,africa" alt="Mother and baby in Africa" />
+  <header>
+    <h1>Sauti Mama</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#solution">Solution</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <div class="hero">
+    <h2>Empowering Rural Mothers with Voice Technology</h2>
+  </div>  <section id="about">
+    <h3>About Us</h3>
+    <p>
+      Sauti Mama is a maternal health information platform that uses voice technology (IVR and WhatsApp voice notes) to reach underserved mothers in rural Uganda.
+      With low smartphone and literacy rates in regions like Moroto and Kitgum, we are bridging the information gap by delivering trusted, localized, and timely health content in native languages.
+    </p>
+    <div class="img-row">
+      <img src="https://images.unsplash.com/photo-1605118966333-5c8e99dc2161?auto=format&fit=crop&w=800&q=80" alt="Community health" />
+      <img src="https://images.unsplash.com/photo-1551303462-d2c5fbb47b1e?auto=format&fit=crop&w=800&q=80" alt="Mother with baby" />
     </div>
-  </section>
-
-  <section id="problem" aria-label="The Problem">
-    <h2>The Problem</h2>
-    <p><strong>Why This Matters:</strong></p>
-    <p>Uganda’s maternal mortality rate is 189 per 100,000 live births. In rural regions like Kitgum and Moroto, the risk is even higher. Many women lack access to skilled care, can't afford transport, or simply don’t get the right information early enough.</p>
-    <p>Low literacy rates make written materials hard to understand, and health messaging often fails to reach deep rural communities in languages they relate to.</p>
-    <div class="image-container">
-      <img src="https://source.unsplash.com/960x480/?rural,health,africa" alt="Rural health clinic in Africa" />
+  </section>  <section id="solution">
+    <h3>Our Solution</h3>
+    <p>
+      Through partnerships with health professionals and local leaders, Sauti Mama delivers culturally appropriate content in audio format. Whether it's antenatal care tips or postpartum support, we ensure every mother hears what matters most.
+    </p>
+    <p>
+      We use both inbound and outbound IVR calls and integrate with WhatsApp to create a hybrid channel that fits the communication habits of rural women.
+    </p>
+    <div class="img-row">
+      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=800&q=80" alt="Health call" />
+      <img src="https://images.unsplash.com/photo-1635614113284-36e9b2f6b157?auto=format&fit=crop&w=800&q=80" alt="Mother listening" />
     </div>
-    <p><em>Visual Suggestions:</em></p>
-    <ul>
-      <li>Map highlighting Kitgum & Moroto</li>
-      <li>Chart: Declining national MMR vs persistently high MMR in Northern Uganda</li>
-    </ul>
-  </section>
-
-  <section id="solution" aria-label="Our Solution">
-    <h2>Our Solution</h2>
-    <p>We’re building a voice-first maternal health platform that speaks to real people in real ways:</p>
-    <ul>
-      <li>✅ IVR system – Call a free line and press a number to hear tips, danger signs, or reminders.</li>
-      <li>✅ WhatsApp voice notes – Weekly maternal health audio in English and local languages.</li>
-      <li>✅ Emergency response option – "Press 9" to connect to a WhatsApp call for urgent help.</li>
-      <li>✅ Track for unwanted pregnancy – Supportive, non-judgmental guidance for young mothers.</li>
-      <li>✅ Male involvement – Voice content just for fathers and male caregivers.</li>
-    </ul>
-    <h3>Why Voice?</h3>
-    <ul>
-      <li>📻 87% of households own a radio</li>
-      <li>📱 Over 70% own a mobile phone</li>
-      <li>📚 Literacy is still a challenge — but voice cuts through</li>
-      <li>🗣️ Voice is familiar, trusted, and culturally appropriate</li>
-    </ul>
-    <div class="image-container">
-      <img src="https://source.unsplash.com/960x480/?mobile-phone,radio,africa" alt="Mobile phone and radio in Africa" />
-    </div>
-  </section>
-
-  <section id="pilot" aria-label="Pilot Plan">
-    <h2>Pilot Plan</h2>
-    <p><strong>Location:</strong> Kitgum (Acholi) and Moroto (Karamoja), two of Uganda’s highest-burden maternal health districts.</p>
-    <p><strong>Timeline:</strong></p>
-    <div class="flex-row">
-      <div class="flex-col">
-        <ul>
-          <li>📅 Phase 1 (Month 1–2): Develop and record content in local languages</li>
-          <li>📅 Phase 2 (Month 2–3): Set up IVR + WhatsApp channels</li>
-        </ul>
-      </div>
-      <div class="flex-col">
-        <ul>
-          <li>📅 Phase 3 (Month 3–4): Community enrollment via clinics & radio</li>
-          <li>📅 Phase 4 (Month 4–6): Monitor use, gather feedback, improve system</li>
-        </ul>
-      </div>
-    </div>
-    <p><strong>Target Impact:</strong></p>
-    <ul>
-      <li>📞 Reach 500+ women in 6 months</li>
-      <li>💬 Increase ANC visits & early care-seeking</li>
-      <li>📊 Collect measurable feedback to inform scale-up</li>
-    </ul>
-    <div class="image-container">
-      <img src="https://source.unsplash.com/960x480/?community,health" alt="Community health meeting" />
-    </div>
-  </section>
-
-  <section id="about" aria-label="About Us">
-    <h2>About Us</h2>
-    <p><strong>Who We Are</strong></p>
-    <p>We’re a Ugandan-led creative team passionate about using voice for impact.</p>
-    <p>Ad Voice Co. was born from a belief that every brand and every message deserves a voice that truly connects. We specialize in voiceover, audio branding, and cultural localization. From Kampala to Lagos, our work brings clarity, character, and connection to every story.</p>
-    <h3>Team:</h3>
-    <ul>
-      <li><strong>Founder:</strong> Ilobun Faithful Iziengbe</li>
-      <li><strong>Co-Founder:</strong> Olu John</li>
-      <li><strong>Consultant:</strong> Olayinka Taiwo</li>
-      <li><strong>Head of Marketing:</strong> Niyonsaba Elie</li>
-    </ul>
-    <div class="image-container">
-      <img src="https://source.unsplash.com/960x480/?team,people,africa" alt="Team working together" />
-    </div>
-  </section>
-
-  <section id="partners" aria-label="Partners and Collaboration">
-    <h2>Partners & Collaboration</h2>
-    <p><strong>Let’s Do This Together</strong></p>
-    <p>We’re seeking partners to help us bring this project to life:</p>
-    <ul>
-      <li>🤝 Telecom providers — to power the IVR system</li>
-      <li>🩺 Health NGOs & clinics — to co-create content and enroll users</li>
-      <li>📻 Radio stations — to amplify reach</li>
-      <li>📱 Tech collaborators — to help us build simple, scalable platforms</li>
-    </ul>
-    <button class="btn" onclick="location.href='#contact'">Contact Us</button>
-    <button class="btn" onclick="location.href='#contact'">Get Involved</button>
-  </section>
-
-  <section id="contact" aria-label="Contact Us">
-    <h2>Contact Us</h2>
-    <p class="contact-info"><strong>Email:</strong> <a href="mailto:hello.advoice@gmail.com">hello.advoice@gmail.com</a></p>
-    <p class="contact-info"><strong>WhatsApp & Call:</strong> <a href="tel:+256742329187">+256742329187</a></p>
-    <p style="margin-top: 1rem; font-style: italic; color: #666;">More contact features (e.g., form or map) can be added later.</p>
-  </section>
-
-</main>
-
-<footer>
-  &copy; 2025 Sauti Mama | Ad Voice Co. – All rights reserved.
-</footer>
-
+  </section>  <section id="contact">
+    <h3>Contact Us</h3>
+    <p><strong>Email:</strong> hello.advoice@gmail.com</p>
+    <p><strong>WhatsApp & Call:</strong> +256742329187</p>
+    <p><strong>Team:</strong> Ilobun Faithful Iziengbe, Olu John, Olayinka Taiwo, Niyonsaba Elie</p>
+  </section>  <footer>
+    <p>&copy; 2025 Sauti Mama. All rights reserved.</p>
+    <p>Powered by AdVoice Uganda</p>
+  </footer>
 </body>
-      </html>
+  </html>
